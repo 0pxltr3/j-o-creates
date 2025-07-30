@@ -47,6 +47,17 @@
   .sitemap-icon-link svg { width: 1.5rem; height: 1.5rem; color: var(--color-text); transition: color 0.2s ease; }
   .sitemap-icon-link a:hover svg { color: var(--color-accent); }
 
+  .availability-banner { display: flex; align-items: center; justify-content: center; position: relative; background-color: var(--color-accent); color: var(--color-bg); padding: 0.75rem 3rem; }
+  .availability-banner.is-hidden { display: none; }
+  .banner-content { display: flex; flex-direction: row; align-items: center; justify-content: center; text-align: center; gap: 1rem; }
+  .banner-content p { margin: 0; font-weight: 500; line-height: 1.5; font-size: 0.95rem; }
+  .banner-content p strong { font-weight: 700; }
+  .banner-cta { color: var(--color-bg); font-weight: 700; font-size: 0.95rem; text-decoration: none; border-bottom: 2px solid transparent; transition: border-bottom-color 0.2s ease; }
+  .banner-cta:hover { border-bottom-color: var(--color-bg); }
+  .banner-icon { display: inline-block; }
+  .banner-close-btn { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); background: none; border: none; color: var(--color-bg); cursor: pointer; padding: 0.5rem; line-height: 0; opacity: 0.7; transition: opacity 0.2s ease; }
+  .banner-close-btn:hover { opacity: 1; }
+
     </style>
 	</head>
 	<body>  <header class="top-navbar">
@@ -80,5 +91,29 @@
         </nav>
     </div>
   </header>
+  <div class="availability-banner" id="availability-banner">
+      <div class="banner-content">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="banner-icon"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+          <p><strong>Available for new projects.</strong> Let's build something amazing together.</p>
+          <a href="contact.html" class="banner-cta">Get in Touch →</a>
+      </div>
+      <button class="banner-close-btn" aria-label="Dismiss banner">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+  </div>
+  <script>
+    // SCRIPT FOR BANNER CLOSE BUTTON
+    const availabilityBanner = document.getElementById('availability-banner');
+    const closeBannerBtn = document.querySelector('.banner-close-btn');
+
+    if (availabilityBanner && closeBannerBtn) {
+        closeBannerBtn.addEventListener('click', () => {
+            availabilityBanner.classList.add('is-hidden');
+        });
+    }
+  </script>
 	</body>
 </html>
