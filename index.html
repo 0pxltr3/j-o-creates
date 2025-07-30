@@ -89,6 +89,17 @@
   .social-link { display: inline-flex; align-items: center; gap: 0.5rem; background-color: var(--color-surface); color: var(--color-text); font-size: 0.9rem; font-weight: 600; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 100px; transition: all 0.2s ease; }
   .social-link:hover { background-color: var(--color-border); color: var(--color-heading); }
 
+  .services-section { padding: 4rem 3rem; }
+  .services-section .section-header { text-align: center; margin-bottom: 3rem; }
+  .services-section .section-subtitle { font-size: 1.1rem; margin: 1rem auto 0 auto; max-width: 600px; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+  .service-category-card { background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; text-align: center; }
+  .service-category-icon { color: var(--color-accent); background-color: var(--color-accent-transparent); border-radius: 8px; padding: 0.75rem; display: inline-flex; margin-bottom: 1.5rem; }
+  .service-category-card h3 { font-size: 1.25rem; margin: 0 0 1rem 0; }
+  .service-category-description { color: var(--color-text); margin: 0 0 1.5rem 0; }
+  .service-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; text-align: center; }
+  .service-list li { font-weight: 500; }
+
     </style>
 	</head>
 	<body>  <header class="top-navbar">
@@ -200,6 +211,53 @@
             </div>
         </div>
       </div>
+    </section>
+    <section class="services-section">
+        <div class="section-header">
+            <h2>Service Offerings</h2>
+            <p class="section-subtitle">We deliver comprehensive design solutions across three core areas, ensuring a cohesive and impactful brand experience.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-category-card">
+                <div class="service-category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 22l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                </div>
+                <h3>Brand & Identity</h3>
+                <p class="service-category-description">Crafting memorable identities that articulate your unique value and resonate with your audience.</p>
+                <ul class="service-list">
+                    <li>Logo & Visual Systems</li>
+                    <li>Brand Strategy</li>
+                    <li>Comprehensive Guidelines</li>
+                    <li>Marketing Collateral</li>
+                </ul>
+            </div>
+            <div class="service-category-card">
+                <div class="service-category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <h3>Digital & UI/UX Design</h3>
+                <p class="service-category-description">Designing beautiful and intuitive digital experiences that drive user engagement and conversion.</p>
+                <ul class="service-list">
+                    <li>Website & App UI Design</li>
+                    <li>User Experience (UX)</li>
+                    <li>Interactive Prototyping</li>
+                    <li>Design Systems</li>
+                </ul>
+            </div>
+            <div class="service-category-card">
+                <div class="service-category-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <h3>Creative Support</h3>
+                <p class="service-category-description">Providing ongoing creative partnership to ensure your brand remains consistent and impactful.</p>
+                <ul class="service-list">
+                    <li>Art Direction</li>
+                    <li>Social Media Graphics</li>
+                    <li>Presentation Design</li>
+                    <li>Design Retainers</li>
+                </ul>
+            </div>
+        </div>
     </section>
   </main>
 
