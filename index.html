@@ -366,10 +366,11 @@
     body.mobile-nav-open .main-nav {
         transform: translateY(0);
     }
-    /* Hide the desktop nav links list when not in mobile view */
+    /* Hide the desktop nav links list by default on mobile */
     .nav-container > .main-nav > .nav-links {
       display: none;
     }
+    
     /* Style links inside the mobile overlay */
     .main-nav .nav-links {
         display: flex;
@@ -483,7 +484,7 @@
                   <li><a href="faq.html">FAQ</a></li>
                </ul>
             </nav>
-            <button class="menu-toggle" aria-label="Open menu">
+            <button class="menu-toggle" aria-label="Toggle menu">
               <span></span>
               <span></span>
               <span></span>
