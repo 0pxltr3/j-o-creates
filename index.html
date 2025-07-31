@@ -7,29 +7,51 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>John Ogletree // Home</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
   :root {
-    --color-bg: #18181B;
-    --color-surface: #27272A;
-    --color-text: #A1A1AA;
-    --color-heading: #F4F4F5;
-    --color-accent: #2DD4BF;
-    --color-accent-dark: #14B8A6;
-    --color-accent-transparent: rgba(45, 212, 191, 0.1);
-    --color-border: #3F3F46;
-    --font-body: 'Inter', sans-serif;
-    --font-heading: 'Lora', serif;
+    --color-bg: #0D0221;
+    --color-surface: #14082E;
+    --color-text: #00FF00;
+    --color-heading: #FFFFFF;
+    --color-accent: #F800F8;
+    --color-accent-dark: #B300B3;
+    --color-accent-transparent: rgba(248, 0, 248, 0.15);
+    --color-border: #F800F8;
+    --font-body: 'VT323', monospace;
+    --font-heading: 'Press Start 2P', cursive;
     --navbar-height: 70px;
   }
   
   html { padding-top: var(--navbar-height); }
-  body { background-color: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: 16px; line-height: 1.7; margin: 0; }
+  body { 
+    background-color: var(--color-bg); 
+    color: var(--color-text); 
+    font-family: var(--font-body); 
+    font-size: 20px; 
+    line-height: 1.6; 
+    margin: 0;
+    text-shadow: 0 0 3px rgba(0, 255, 0, 0.4);
+  }
   
-  h1, h2, h3, h4 { color: var(--color-heading); font-family: var(--font-heading); line-height: 1.2; font-weight: 500;}
-  h1 { font-size: 3.8rem; letter-spacing: -0.02em; }
-  h2 { font-size: 2.5rem; }
-  h3 { font-size: 1.1rem; font-weight: 600; font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.05em; }
+  h1, h2, h3, h4 { 
+    color: var(--color-heading); 
+    font-family: var(--font-heading); 
+    line-height: 1.3; 
+    font-weight: 400;
+    text-shadow: 0 0 5px var(--color-accent);
+  }
+  h1 { font-size: 2.8rem; letter-spacing: 1px; }
+  h2 { font-size: 2rem; }
+  h3 { 
+    font-size: 1rem; 
+    font-family: var(--font-heading); 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    color: var(--color-accent);
+    text-shadow: none;
+  }
+  p, li, span, time, label, input, textarea { font-size: 20px; }
   
   section {
     padding: 6rem 3rem;
@@ -37,155 +59,162 @@
     box-sizing: border-box;
   }
   
-  /* Colorizes odd-numbered sections */
-  section:nth-of-type(odd) {
-    background-color: var(--color-bg);
-  }
-
-  /* Colorizes even-numbered sections for a striping effect */
+  section:nth-of-type(odd) { background-color: var(--color-bg); }
   section:nth-of-type(even) { 
     background-color: var(--color-surface); 
-    border-top: 1px solid var(--color-border); 
-    border-bottom: 1px solid var(--color-border); 
+    border-top: 2px dashed var(--color-border); 
+    border-bottom: 2px dashed var(--color-border); 
   }
 
-  .top-navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(24, 24, 27, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border); z-index: 1000; }
+  .top-navbar { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: rgba(13, 2, 33, 0.8); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    border-bottom: 2px solid var(--color-border); 
+    z-index: 1000; 
+  }
   .nav-container { display: flex; justify-content: space-between; align-items: center; height: var(--navbar-height); width: 100%; padding: 0 3rem; box-sizing: border-box; }
-  .repo-title { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); color: var(--color-heading); font-size: 0.9rem; text-decoration: none; font-weight: 600; }
+  .repo-title { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); color: var(--color-heading); font-size: 0.8rem; text-decoration: none; font-weight: 400; }
   .icon-repo { fill: var(--color-text); }
   
   .menu-toggle, .close-menu-toggle { display: none; }
   .main-nav { position: static; background-color: transparent; height: auto; width: auto; opacity: 1; pointer-events: auto; flex-direction: row; }
   .nav-links { display: flex; flex-direction: row; align-items: center; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
   .nav-links li { margin: 0; }
-  .nav-links a { font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; color: var(--color-text); text-decoration: none; padding: 0.5rem 1rem; transition: color 0.2s ease; }
-  .nav-links a:hover { color: var(--color-accent); }
+  .nav-links a { font-family: var(--font-body); font-size: 20px; font-weight: 400; color: var(--color-text); text-decoration: none; padding: 0.5rem 1rem; transition: all 0.2s ease; }
+  .nav-links a:hover { color: var(--color-accent); background-color: var(--color-accent-transparent); }
   
   .sitemap-icon-link { display: flex; align-items: center; }
   .sitemap-icon-link a { display: inline-block; line-height: 0; }
   .sitemap-icon-link svg { width: 1.5rem; height: 1.5rem; color: var(--color-text); transition: color 0.2s ease; }
   .sitemap-icon-link a:hover svg { color: var(--color-accent); }
 
-  .availability-banner { display: flex; align-items: center; justify-content: center; position: relative; background-color: var(--color-accent); color: var(--color-bg); padding: 0.75rem 3rem; }
+  .availability-banner { display: flex; align-items: center; justify-content: center; position: relative; background-color: var(--color-accent); color: var(--color-bg); padding: 0.75rem 3rem; text-shadow: none; }
   .availability-banner.is-hidden { display: none; }
   .banner-content { display: flex; flex-direction: row; align-items: center; justify-content: center; text-align: center; gap: 1rem; }
-  .banner-content p { margin: 0; font-weight: 500; line-height: 1.5; font-size: 0.95rem; }
+  .banner-content p { margin: 0; line-height: 1.5; font-size: 20px; font-weight: 700; }
   .banner-content p strong { font-weight: 700; }
-  .banner-cta { color: var(--color-bg); font-weight: 700; font-size: 0.95rem; text-decoration: none; border-bottom: 2px solid transparent; transition: border-bottom-color 0.2s ease; }
+  .banner-cta { color: var(--color-bg); font-weight: 700; font-size: 20px; text-decoration: none; border-bottom: 2px solid transparent; transition: border-bottom-color 0.2s ease; }
   .banner-cta:hover { border-bottom-color: var(--color-bg); }
   .banner-icon { display: inline-block; }
   .banner-close-btn { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); background: none; border: none; color: var(--color-bg); cursor: pointer; padding: 0.5rem; line-height: 0; opacity: 0.7; transition: opacity 0.2s ease; }
   .banner-close-btn:hover { opacity: 1; }
 
   .hero { display: flex; flex-direction: row; align-items: center; justify-content: space-between; text-align: left; gap: 3rem; min-height: calc(100vh - var(--navbar-height)); }
-  .hero-intro { font-family: var(--font-body); font-weight: 600; color: var(--color-accent); margin-bottom: 0.5rem; }
+  .hero-intro { font-family: var(--font-body); font-weight: 400; color: var(--color-accent); margin-bottom: 0.5rem; font-size: 22px; text-shadow: 0 0 5px var(--color-accent); }
   .hero-content { flex: 1 1 50%; }
-  .hero-content h1 { font-weight: 700; color: #fff; }
-  .hero .subtitle { font-size: 1.1rem; margin: 1.5rem 0 0 0; color: var(--color-text); }
+  .hero-content h1 { font-weight: 400; color: #fff; }
+  .hero .subtitle { font-size: 22px; margin: 1.5rem 0 0 0; color: var(--color-text); }
   .hero-image { flex: 1 1 40%; max-width: 450px; }
-  .image-placeholder { display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; background-color: var(--color-surface); border-radius: 12px; }
-  .image-placeholder svg { width: 60px; height: 60px; color: var(--color-border); stroke-width: 1.5; }
+  .image-placeholder { display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; background-color: transparent; border: none; }
+  .image-placeholder svg { width: 100%; height: 100%; color: var(--color-border); }
   .hero-cta { display: flex; gap: 1rem; justify-content: flex-start; margin-top: 2rem; }
   
-  .cta-button { display: inline-block; padding: 0.85rem 1.75rem; background-color: var(--color-accent); color: var(--color-bg); text-decoration: none; border-radius: 100px; font-weight: 600; transition: all 0.2s ease; font-family: var(--font-body); border: 2px solid var(--color-accent); cursor: pointer; }
-  .cta-button:hover { background-color: var(--color-accent-dark); border-color: var(--color-accent-dark); }
-  .cta-button.secondary { background-color: transparent; border-color: var(--color-border); color: var(--color-heading); }
-  .cta-button.secondary:hover { background-color: var(--color-surface); border-color: var(--color-surface); color: var(--color-heading); }
+  .cta-button { display: inline-block; padding: 0.85rem 1.75rem; background-color: var(--color-accent); color: var(--color-bg); text-decoration: none; border-radius: 0; font-family: var(--font-heading); font-size: 1rem; transition: all 0.2s ease; border: 2px solid var(--color-accent); cursor: pointer; text-shadow: none; }
+  .cta-button:hover { background-color: var(--color-accent-dark); border-color: var(--color-accent-dark); color: var(--color-bg); }
+  .cta-button.secondary { background-color: transparent; border-color: var(--color-border); color: var(--color-accent); }
+  .cta-button.secondary:hover { background-color: var(--color-accent); border-color: var(--color-accent); color: var(--color-bg); }
 
-  .profile-card { background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 3rem; }
+  .profile-card { background-color: var(--color-surface); border: 2px solid var(--color-border); border-radius: 0; padding: 3rem; }
   .profile-header { display: flex; flex-direction: row; align-items: center; text-align: left; gap: 1rem; margin-bottom: 2rem; }
-  .avatar { width: 100px; height: 100px; }
+  .avatar { width: 100px; height: 100px; border: 2px solid var(--color-text); padding: 5px; }
   .skills-social-wrapper { display: flex; justify-content: space-between; align-items: start; margin-top: 2rem; }
   .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: flex-start; }
-  .skills-list span { background-color: var(--color-accent-transparent); color: var(--color-accent); padding: 0.4rem 0.8rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; }
+  .skills-list span { background-color: var(--color-accent-transparent); color: var(--color-accent); padding: 0.4rem 0.8rem; border-radius: 0; font-size: 18px; font-weight: 400; border: 1px solid var(--color-accent); }
   .profile-social { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: flex-start; margin-top: 0; }
   .profile-skills { display: flex; align-items: baseline; gap: 1.5rem; }
   .profile-skills h3 { flex-shrink: 0; }
-  .social-link { display: inline-flex; align-items: center; gap: 0.5rem; background-color: var(--color-surface); color: var(--color-text); font-size: 0.9rem; font-weight: 600; text-decoration: none; padding: 0.5rem 1rem; border-radius: 100px; transition: all 0.2s ease; }
-  .social-link:hover { background-color: var(--color-border); color: var(--color-heading); }
+  .social-link { display: inline-flex; align-items: center; gap: 0.5rem; background-color: var(--color-surface); color: var(--color-text); font-size: 18px; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0; transition: all 0.2s ease; border: 1px solid var(--color-text); }
+  .social-link:hover { background-color: var(--color-text); color: var(--color-bg); text-shadow: none; }
 
   .section-header { text-align: left; margin-bottom: 0; position: sticky; top: var(--navbar-height); grid-column: 1 / 2; }
-  .section-subtitle { font-size: 1.1rem; margin: 1rem 0 0 0; }
+  .section-subtitle { font-size: 22px; margin: 1rem 0 0 0; }
   
   .services-grid, .projects-grid, .blog-grid { display: grid; gap: 2rem; }
   .services-grid, .blog-grid { grid-template-columns: repeat(3, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); } 
 
-  .service-category-card, .project-card, .blog-card { background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; transition: transform 0.2s ease, border-color 0.2s ease; }
-  .service-category-card:hover, .project-card:hover, .blog-card:hover { transform: translateY(-5px); border-color: var(--color-accent); }
+  .service-category-card, .project-card, .blog-card { background-color: var(--color-surface); border: 2px solid var(--color-border); border-radius: 0; transition: transform 0.2s ease, border-color 0.2s ease; }
+  .service-category-card:hover, .project-card:hover, .blog-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px var(--color-accent-transparent); }
   
   .service-category-card { padding: 2rem; display: flex; flex-direction: column; }
   .service-category-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-  .service-category-icon { color: var(--color-accent); background-color: var(--color-accent-transparent); border-radius: 8px; padding: 0.5rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .service-category-card h3 { margin: 0; font-size: 1.1rem; font-family: var(--font-body); font-weight: 700; color: var(--color-heading); line-height: 1.3; text-transform: none; letter-spacing: normal; }
-  .service-category-description { color: var(--color-text); margin: 0 0 1.5rem 0; line-height: 1.6; font-size: 0.95rem; flex-grow: 1; }
+  .service-category-icon { color: var(--color-accent); background-color: var(--color-accent-transparent); border-radius: 0; padding: 0.5rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid var(--color-accent); }
+  .service-category-card h3 { margin: 0; font-size: 1rem; font-family: var(--font-heading); color: var(--color-accent); line-height: 1.3; text-transform: uppercase; letter-spacing: normal; }
+  .service-category-description { color: var(--color-text); margin: 0 0 1.5rem 0; line-height: 1.6; font-size: 20px; flex-grow: 1; }
+  .service-divider { border: 0; height: 2px; background-color: transparent; border-bottom: 2px dashed var(--color-border); margin: 1.5rem 0; }
   .service-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
-  .service-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; font-weight: 500; color: var(--color-text); }
-  .service-list li::before { content: ''; display: block; width: 16px; height: 16px; flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232DD4BF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; background-position: center; }
+  .service-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 20px; color: var(--color-text); }
+  .service-list li::before { content: '>'; display: block; flex-shrink: 0; margin-right: 0.5rem; color: var(--color-accent); }
   
-  .project-card { display: flex; flex-direction: row; align-items: center; gap: 1.5rem; padding: 1.5rem; overflow: hidden; }
-  .project-content { order: 1; flex: 1 1 50%; padding: 0; }
-  .project-image { order: 2; flex: 1 1 50%; }
-  .project-category { color: var(--color-accent); font-weight: 600; margin-bottom: 0.5rem; font-family: var(--font-body); }
-  .project-content h3 { text-transform: none; letter-spacing: normal; font-size: 1.25rem; margin: 0.25rem 0 0.5rem 0; }
+  .project-card { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; overflow: hidden; }
+  .project-content { order: 2; flex: 1 1 50%; padding: 0; }
+  .project-image { order: 1; width: 100%; aspect-ratio: 16/9; background: #000; border: 2px solid var(--color-text);}
+  .project-image .image-placeholder { border: none; }
+  .project-category { color: var(--color-accent); margin-bottom: 0.5rem; font-family: var(--font-body); font-size: 18px; }
+  .project-content h3 { font-size: 1rem; margin: 0.25rem 0 0.5rem 0; }
   .project-description { color: var(--color-text); margin: 0; }
   
-  .blog-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 1rem; font-size: 0.9rem; }
+  .blog-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 1rem; font-size: 18px; }
   .blog-card { padding: 1.5rem; }
-  .blog-category { background-color: var(--color-accent-transparent); color: var(--color-accent); padding: 0.25rem 0.75rem; border-radius: 100px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  .blog-link { font-weight: 600; text-decoration: none; color: var(--color-heading); }
-  .blog-link:hover { color: var(--color-accent); }
-  .review-link { display: inline-block; background-color: var(--color-surface); border: 1px solid var(--color-border); padding: 0.5rem 1.25rem; border-radius: 100px; font-size: 0.9rem; transition: all 0.2s ease; }
-  .review-link:hover { background-color: var(--color-border); border-color: var(--color-border); color: var(--color-heading); }
+  .blog-category { background-color: var(--color-accent-transparent); color: var(--color-accent); padding: 0.25rem 0.75rem; border-radius: 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid var(--color-accent); }
+  .blog-link { text-decoration: underline; color: var(--color-accent); }
+  .blog-link:hover { color: var(--color-heading); }
+  .review-link { display: inline-block; background-color: transparent; border: 1px solid var(--color-accent); color: var(--color-accent); padding: 0.5rem 1.25rem; border-radius: 0; font-size: 18px; transition: all 0.2s ease; }
+  .review-link:hover { background-color: var(--color-accent); color: var(--color-bg); text-shadow: none; }
 
   .newsletter-section { padding: 5rem 1.5rem; grid-template-columns: 1fr; }
   .newsletter-content-wrapper { max-width: 650px; margin: 0 auto; text-align: center; }
   .newsletter-icon { display: inline-block; color: var(--color-accent); margin-bottom: 1.5rem; }
-  .newsletter-section h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-  .newsletter-section p { font-size: 1.1rem; color: var(--color-text); max-width: 550px; margin: 0 auto 2.5rem auto; }
+  .newsletter-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+  .newsletter-section p { font-size: 22px; color: var(--color-text); max-width: 550px; margin: 0 auto 2.5rem auto; }
   .newsletter-form { display: flex; flex-direction: row; gap: 1rem; max-width: 500px; margin: 0 auto; }
-  .newsletter-form input { flex-grow: 1; width: 100%; padding: 0.75rem 1rem; background-color: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; color: var(--color-heading); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
-  .newsletter-form input:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent-transparent); }
-  .newsletter-form button { border: none; font-size: 1rem; width: auto; }
+  .newsletter-form input { flex-grow: 1; width: 100%; padding: 0.75rem 1rem; background-color: var(--color-bg); border: 2px solid var(--color-border); border-radius: 0; color: var(--color-text); font-family: var(--font-body); font-size: 20px; box-sizing: border-box; }
+  .newsletter-form input:focus { outline: none; background-color: var(--color-accent-transparent); }
+  .newsletter-form button { border: none; font-size: 1rem; width: auto; border-radius: 0; }
 
-  .resume-container { background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; }
-  .resume-category h3 { color: var(--color-accent); padding-bottom: 1rem; border-bottom: 1px solid var(--color-border); margin-bottom: 1.5rem; font-family: var(--font-heading); font-weight: 700; }
-  .resume-item { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 0.25rem; margin-bottom: 1.5rem; }
-  .resume-item h4 { font-family: var(--font-body); font-size: 1rem; margin: 0; font-weight: 600; color: var(--color-heading); }
-  .resume-item-aside { text-align: right; width: auto; color: var(--color-text); font-size: 0.9rem; }
+  .resume-container { background-color: var(--color-surface); border: 2px solid var(--color-border); border-radius: 0; padding: 2rem; }
+  .resume-category h3 { color: var(--color-accent); padding-bottom: 1rem; border-bottom: 2px dashed var(--color-border); margin-bottom: 1.5rem; font-family: var(--font-heading); }
+  .resume-item { display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; margin-bottom: 1.5rem; }
+  .resume-item h4 { font-family: var(--font-body); font-size: 22px; margin: 0; font-weight: 400; color: var(--color-heading); text-shadow: none; }
+  .resume-item-aside { text-align: left; width: auto; color: var(--color-text); font-size: 18px; }
   
   .services-cta, .projects-cta, .blog-cta, .resume-cta { text-align: left; margin-top: 2rem; }
 
   .contact-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
   .contact-form .form-group { margin-bottom: 1rem; }
-  .contact-form label { font-weight: 600; margin-bottom: 0.5rem; display: block; }
-  .contact-form input, .contact-form textarea { width: 100%; padding: 0.75rem 1rem; background-color: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; color: var(--color-heading); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
-  .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent-transparent); }
-  .contact-form textarea { resize: vertical; min-height: 120px; }
+  .contact-form label { font-weight: 400; margin-bottom: 0.5rem; display: block; }
+  .contact-form input, .contact-form textarea { width: 100%; padding: 0.75rem 1rem; background-color: var(--color-bg); border: 2px solid var(--color-border); border-radius: 0; color: var(--color-text); font-family: var(--font-body); font-size: 20px; box-sizing: border-box; }
+  .contact-form input:focus, .contact-form textarea:focus { outline: none; background-color: var(--color-accent-transparent); }
+  .contact-form textarea { resize: none; min-height: 120px; }
   .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   
   .faq-container { max-width: 800px; margin: 0 auto; }
-  .faq-item { border-bottom: 1px solid var(--color-border); }
-  .faq-question { display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; padding: 1.25rem 0; font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--color-heading); text-align: left; cursor: pointer; }
+  .faq-item { border-bottom: 2px dashed var(--color-border); }
+  .faq-question { display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; padding: 1.25rem 0; font-family: var(--font-body); font-size: 22px; font-weight: 400; color: var(--color-text); text-align: left; cursor: pointer; }
   .faq-question:hover { color: var(--color-accent); }
   .faq-icon { transition: transform 0.3s ease; color: var(--color-accent); }
-  .faq-item.active .faq-icon { transform: rotate(45deg); }
+  .faq-item.active .faq-icon { transform: rotate(180deg); }
   .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease-out; }
   .faq-answer > div { overflow: hidden; }
   .faq-item.active .faq-answer { grid-template-rows: 1fr; }
-  .faq-answer p { padding-bottom: 1.25rem; margin: 0; }
-  .faq-answer a { color: var(--color-accent); text-decoration: none; }
-  .faq-answer a:hover { text-decoration: underline; }
+  .faq-answer p { padding-bottom: 1.25rem; margin: 0; font-size: 20px; }
+  .faq-answer a { color: var(--color-accent); text-decoration: underline; }
+  .faq-answer a:hover { text-decoration: none; }
   
-  .site-footer { padding: 4rem 1.5rem 2rem; background-color: var(--color-bg); border-top: 1px solid var(--color-border); }
+  .site-footer { padding: 4rem 1.5rem 2rem; background-color: var(--color-bg); border-top: 2px solid var(--color-border); }
   .footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; }
-  .footer-about h3 { font-family: var(--font-heading); color: var(--color-heading); margin: 0 0 0.5rem 0; font-size: 1.25rem; }
+  .footer-about h3 { font-family: var(--font-heading); color: var(--color-accent); margin: 0 0 0.5rem 0; font-size: 1rem; }
   .footer-links ul, .footer-social ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
   .footer-links a, .footer-social a { color: var(--color-text); text-decoration: none; transition: color 0.2s ease; }
   .footer-links a:hover, .footer-social a:hover { color: var(--color-accent); }
-  .footer-bottom { display: flex; flex-direction: row; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 2rem; margin-top: 2rem; }
-  .copyright { font-size: 0.9rem; color: var(--color-text); }
-  .back-to-top { color: var(--color-text); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s ease; }
+  .footer-bottom { display: flex; flex-direction: row; justify-content: space-between; align-items: center; border-top: 2px dashed var(--color-border); padding-top: 2rem; margin-top: 2rem; }
+  .copyright { font-size: 18px; color: var(--color-text); }
+  .back-to-top { color: var(--color-text); text-decoration: none; font-size: 18px; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s ease; }
   .back-to-top:hover { color: var(--color-accent); }
   
   .services-section, .projects-section, .blog-section, .resume-section, .contact-section, .faq-section {
@@ -197,41 +226,29 @@
   .services-section .services-grid, .projects-section .projects-grid, .blog-section .blog-content-wrapper, .resume-section .resume-container, .contact-section .contact-wrapper, .faq-section .faq-container {
     grid-column: 2 / -1;
   }
-  
     </style>
   </head>
   <body>
     <header class="top-navbar">
-    <div class="nav-container">
-        <a href="index.html" class="repo-title">
-            <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path><path d="m11.25 16 .75-.75L8.75 12l3.25-3.25-.75-.75-3.25 3.25-3.25-3.25-.75.75L7.25 12l-3.25 3.25.75.75L8 12.75Z"></path></svg>
-            <span>John Ogletree</span>
-        </a>
-        <nav class="main-nav" id="main-nav">
-           <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="projects.html">Projects</a></li>
-              <li><a href="articles.html">Articles</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="resume.html">Resume</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li class="sitemap-icon-link">
-                <a href="sitemap.html" aria-label="Sitemap" title="Sitemap">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="18" r="3"></circle>
-                        <circle cx="6" cy="6" r="3"></circle>
-                        <circle cx="18" cy="6" r="3"></circle>
-                        <path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"></path>
-                        <path d="M12 12v3"></path>
-                    </svg>
-                </a>
-              </li>
-          </ul>
-        </nav>
-    </div>
-  </header>
+        <div class="nav-container">
+            <a href="index.html" class="repo-title">
+                <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path><path d="m11.25 16 .75-.75L8.75 12l3.25-3.25-.75-.75-3.25 3.25-3.25-3.25-.75.75L7.25 12l-3.25 3.25.75.75L8 12.75Z"></path></svg>
+                <span>John Ogletree</span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+               <ul class="nav-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="projects.html">Projects</a></li>
+                  <li><a href="articles.html">Articles</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="resume.html">Resume</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+               </ul>
+            </nav>
+        </div>
+    </header>
 
   <div class="availability-banner" id="availability-banner">
       <div class="banner-content">
@@ -250,8 +267,8 @@
     <section class="hero">
       <div class="hero-content">
         <p class="hero-intro">Alex Rivera — Product Designer</p>
-        <h1>Radically transparent design for ambitious brands</h1>
-        <p class="subtitle">I partner with startups and tech companies to craft meaningful digital experiences that are both beautiful and intuitive.</p>
+        <h1>Retro Computing & Design Services</h1>
+        <p class="subtitle">Partnering with startups and tech companies to craft digital experiences from a bygone future.</p>
         <div class="hero-cta">
           <a href="projects.html" class="cta-button">View Work</a>
           <a href="contact.html" class="cta-button secondary">Get in Touch</a>
@@ -259,11 +276,32 @@
       </div>
       <div class="hero-image">
         <div class="image-placeholder">
-           <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="400" rx="200" fill="var(--color-surface)"/>
-            <circle cx="200" cy="200" r="150" fill="var(--color-bg)"/>
-            <circle cx="200" cy="200" r="100" fill="var(--color-accent)"/>
-            <circle cx="200" cy="200" r="50" fill="var(--color-bg)"/>
+           <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grid-grad" x1="50%" y1="0%" x2="50%" y2="100%">
+                  <stop offset="0%" stop-color="#F800F8" stop-opacity="1"/>
+                  <stop offset="100%" stop-color="#00FF00" stop-opacity="1"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="400" fill="var(--color-bg)"/>
+              <path d="M 50 350 L 150 150 L 250 150 L 350 350 Z" stroke="url(#grid-grad)" stroke-width="2" fill="none" opacity="0.2"/>
+              <g stroke="url(#grid-grad)" stroke-width="2">
+                <line x1="200" y1="100" x2="200" y2="400" />
+                <line x1="0" y1="400" x2="400" y2="400" />
+                <path d="M0 400 L 200 100 L 400 400"/>
+                <line x1="50" y1="400" x2="200" y2="150" />
+                <line x1="100" y1="400" x2="200" y2="200" />
+                <line x1="150" y1="400" x2="200" y2="250" />
+                <line x1="250" y1="400" x2="200" y2="250" />
+                <line x1="300" y1="400" x2="200" y2="200" />
+                <line x1="350" y1="400" x2="200" y2="150" />
+                <line x1="25" y1="275" x2="375" y2="275" opacity="0.5"/>
+                <line x1="50" y1="250" x2="350" y2="250" opacity="0.5"/>
+                <line x1="75" y1="225" x2="325" y2="225" opacity="0.5"/>
+                <line x1="100" y1="200" x2="300" y2="200" opacity="0.5"/>
+                <line x1="125" y1="175" x2="275" y2="175" opacity="0.5"/>
+                <line x1="150" y1="150" x2="250" y2="150" opacity="0.5"/>
+              </g>
             </svg>
         </div>
       </div>
@@ -274,13 +312,13 @@
         <div class="profile-header">
           <div class="avatar">
             <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="50" fill="var(--color-surface)"/>
+              <rect width="100" height="100" fill="var(--color-bg)"/>
               <circle cx="50" cy="40" r="20" fill="var(--color-accent)"/>
-              <circle cx="50" cy="90" r="30" fill="var(--color-accent)"/>
+              <path d="M20 80 A 30 30, 0, 0, 1, 80 80" fill="var(--color-accent)"/>
             </svg>
           </div>
           <div class="profile-info">
-            <h2>A Little About Me</h2>
+            <h2>About Me</h2>
             <div class="location">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -301,14 +339,14 @@
                     <span>UI/UX Design</span>
                     <span>Art Direction</span>
                     <span>Typography</span>
-                    <span>Design Systems</span>
+                    <span>Pixel Art</span>
                     <span>Creative Strategy</span>
                 </div>
             </div>
             <div class="profile-social">
-                <a href="#" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg><span>LinkedIn</span></a>
-                <a href="#" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a1.09 1.09 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg><span>Twitter</span></a>
-                <a href="#" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg><span>Instagram</span></a>
+                <a href="#" class="social-link"><span>LinkedIn</span></a>
+                <a href="#" class="social-link"><span>Twitter</span></a>
+                <a href="#" class="social-link"><span>Instagram</span></a>
             </div>
         </div>
       </div>
@@ -317,7 +355,7 @@
     <section class="services-section">
         <div class="section-header">
             <h2>Service Offerings</h2>
-            <p class="section-subtitle">We deliver comprehensive design solutions across three core areas, ensuring a cohesive and impactful brand experience.</p>
+            <p class="section-subtitle">Comprehensive design solutions across three core areas, ensuring a cohesive and impactful brand experience.</p>
             <div class="services-cta">
                 <a href="services.html" class="cta-button secondary">View All Services</a>
             </div>
@@ -331,6 +369,7 @@
                     <h3>Brand & Identity</h3>
                 </div>
                 <p class="service-category-description">Crafting memorable identities that articulate your unique value and resonate with your audience.</p>
+                <hr class="service-divider">
                 <ul class="service-list">
                     <li>Logo & Visual Systems</li>
                     <li>Brand Strategy</li>
@@ -346,6 +385,7 @@
                     <h3>Digital & UI/UX Design</h3>
                 </div>
                 <p class="service-category-description">Designing beautiful and intuitive digital experiences that drive user engagement and conversion.</p>
+                <hr class="service-divider">
                 <ul class="service-list">
                     <li>Website & App UI Design</li>
                     <li>User Experience (UX)</li>
@@ -361,6 +401,7 @@
                     <h3>Creative Support</h3>
                 </div>
                 <p class="service-category-description">Providing ongoing creative partnership to ensure your brand remains consistent and impactful.</p>
+                <hr class="service-divider">
                 <ul class="service-list">
                     <li>Art Direction</li>
                     <li>Social Media Graphics</li>
@@ -381,48 +422,40 @@
         </div>
         <div class="projects-grid">
             <div class="project-card">
+                 <div class="project-image"></div>
                 <div class="project-content">
                     <p class="project-category">Logo Design</p>
                     <h3>Crestwood Guild</h3>
                     <p class="project-description">A heritage-inspired logo for a bespoke woodworking collective.</p>
                 </div>
-                <div class="project-image">
-                    <div class="image-placeholder"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.41 1.41L16.17 10H4v4h12.17l-5.58 5.59L12 21l8-8-8-8z"></path></svg></div>
-                </div>
             </div>
             <div class="project-card">
+                 <div class="project-image"></div>
                 <div class="project-content">
                     <p class="project-category">Video & Motion Graphics</p>
                     <h3>Odyssey Documentary</h3>
                     <p class="project-description">Animated title sequence using kinetic typography to evoke the vastness of space.</p>
                 </div>
-                <div class="project-image">
-                    <div class="image-placeholder"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
-                </div>
             </div>
             <div class="project-card">
+                 <div class="project-image"></div>
                 <div class="project-content">
                     <p class="project-category">Song Artwork</p>
                     <h3>Riverside Single</h3>
                     <p class="project-description">Cover art for an indie-folk single, capturing the song's melancholic and organic tone.</p>
                 </div>
-                <div class="project-image">
-                    <div class="image-placeholder"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></div>
-                </div>
             </div>
             <div class="project-card">
+                 <div class="project-image"></div>
                 <div class="project-content">
                     <p class="project-category">Album Packaging</p>
                     <h3>Neon Midnight</h3>
                     <p class="project-description">Complete art direction and packaging design for a synthwave album.</p>
                 </div>
-                <div class="project-image">
-                    <div class="image-placeholder"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg></div>
-                </div>
             </div>
         </div>
     </section>
-
+    
     <section class="blog-section">
         <div class="section-header">
             <h2>Latest Thoughts</h2>
@@ -438,7 +471,7 @@
                       <span class="blog-category">Design Process</span>
                       <time datetime="2025-07-30">July 30, 2025</time>
                   </div>
-                  <h3 class="blog-title">Reducing Cognitive Load in UI Design</h3>
+                  <h3 class="blog-title">Reducing Cognitive Load</h3>
                   <p class="blog-excerpt">How we simplified complex workflows for Andromeda CRM by focusing on progressive disclosure...</p>
                   <a href="#" class="blog-link">Read Post →</a>
               </article>
@@ -456,107 +489,13 @@
                       <span class="blog-category">Design Trends</span>
                       <time datetime="2025-05-11">May 11, 2025</time>
                   </div>
-                  <h3 class="blog-title">The Return of Brutalism in Digital</h3>
+                  <h3 class="blog-title">The Return of Brutalism</h3>
                   <p class="blog-excerpt">Exploring how raw, unpolished aesthetics are making a comeback in web design...</p>
                   <a href="#" class="blog-link">Read Post →</a>
               </article>
           </div>
         </div>
     </section>
-
-    <section class="newsletter-section">
-        <div class="newsletter-content-wrapper">
-            <div class="newsletter-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
-            </div>
-            <h2>Stay in the Loop</h2>
-            <p>Subscribe for the latest design insights, project updates, and exclusive content delivered to your inbox. No spam, just value.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit" class="cta-button">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <section class="resume-section">
-        <div class="section-header">
-            <h2>Professional Snapshot</h2>
-            <p class="section-subtitle">A brief overview of my career journey and qualifications.</p>
-            <div class="resume-cta">
-                <a href="/alex-rivera-resume.pdf" class="cta-button secondary" download>Download Full Resume</a>
-            </div>
-        </div>
-        <div class="resume-container">
-            <div class="resume-category"><h3>Experience</h3><div class="resume-item"><div class="resume-item-main"><h4>Lead Designer & Founder</h4><p class="resume-company">Starlight Design</p></div><div class="resume-item-aside"><span>2018 – Present</span></div></div><div class="resume-item"><div class="resume-item-main"><h4>Senior Product Designer</h4><p class="resume-company">Nebula Inc.</p></div><div class="resume-item-aside"><span>2015 – 2018</span></div></div></div>
-            <div class="resume-category"><h3>Education</h3><div class="resume-item"><div class="resume-item-main"><h4>B.F.A. in Graphic Design</h4><p class="resume-company">Savannah College of Art and Design</p></div><div class="resume-item-aside"><span>2011 – 2015</span></div></div></div>
-            <div class="resume-category"><h3>Recognition</h3><div class="resume-item"><div class="resume-item-main"><h4>"Site of the Day" Award</h4><p class="resume-company">Awwwards</p></div><div class="resume-item-aside"><span>2024</span></div></div></div>
-        </div>
-    </section>
-
-    <section class="contact-section">
-        <div class="section-header">
-            <h2>Get In Touch</h2>
-            <p class="section-subtitle">Have a project in mind or just want to say hello? Let's build something great together.</p>
-        </div>
-        <div class="contact-wrapper">
-            <form class="contact-form" action="#" method="POST"><div class="form-row"><div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div></div><div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" required></div><div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div><button type="submit" class="cta-button">Send Message</button></form>
-            <div class="contact-details"><h3>Contact Information</h3><p>I'm currently available for freelance projects and new opportunities. Feel free to reach out anytime.</p><ul class="contact-info-list"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <span>Martinez, GA, USA</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <span>alex.rivera@starlight.design</span></li></ul></div>
-        </div>
-    </section>
-    
-    <section class="faq-section">
-        <div class="section-header">
-            <h2>Frequently Asked Questions</h2>
-            <p class="section-subtitle">Answers to common questions about my process, services, and how we can work together.</p>
-        </div>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
-                    <span>What is your design process like?</span>
-                    <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </button>
-                <div class="faq-answer" id="faq-answer-1">
-                    <div>
-                        <p>My process is collaborative and iterative, centered on a deep understanding of your business goals and user needs. It typically involves four phases: <strong>1. Discovery & Strategy</strong> (workshops, research, brief), <strong>2. Design & Prototyping</strong> (wireframes, high-fidelity mockups, interactive prototypes), <strong>3. Development Handoff</strong> (style guides, assets), and <strong>4. Support & Iteration</strong>.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
-                    <span>How are your projects priced?</span>
-                    <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </button>
-                <div class="faq-answer" id="faq-answer-2">
-                   <div>
-                        <p>I offer flexible pricing models to suit your needs. For well-defined projects, I provide a fixed-price quote. For projects where the scope may evolve, I work on a daily or weekly rate. I'm always transparent about costs upfront and will provide a detailed proposal before any work begins.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
-                    <span>What's your current availability?</span>
-                    <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </button>
-                <div class="faq-answer" id="faq-answer-3">
-                   <div>
-                        <p>I am typically booked 2-4 weeks in advance but can sometimes accommodate more urgent projects. The best way to find out is to get in touch. Please reach out via the <a href="contact.html">contact form</a> with details about your project, and I'll get back to you with my availability.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
-                    <span>Why does this site use a github.io domain?</span>
-                    <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </button>
-                <div class="faq-answer" id="faq-answer-4">
-                   <div>
-                        <p>For personal projects and portfolios like this one, I often use GitHub Pages. It's a free, fast, and incredibly reliable way to host static websites directly from a code repository. It not only simplifies the deployment process but also showcases my workflow with Git and version control. While I manage custom domains for client projects, GitHub Pages is my go-to for development and personal showcases.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
   </main>
   
   <footer class="site-footer">
