@@ -1,142 +1,145 @@
-Of course. Here is a new design:
-
-```html
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>John Ogletree // Day & Night</title>
+		<title>John Ogletree // Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
 
         :root {
-            --light-bg: #F0F0F0;
-            --light-text: #202020;
-            --dark-bg: #1A1A1A;
-            --dark-text: #FFFFFF;
-            --accent-color: #FFA500;
+            --color-bg: #111;
+            --color-text: #fff;
+            --font-display: 'Montserrat', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-display);
             margin: 0;
+            overflow: hidden; /* Hide scrollbars as we'll handle scrolling */
+        }
+
+        #gallery {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            width: 400%; /* 100% for each of the 4 images */
+            height: 100vh;
+            animation: slide 16s infinite alternate ease-in-out;
         }
 
-        body.light-mode {
-            background-color: var(--light-bg);
-            color: var(--light-text);
-        }
-
-        body.dark-mode {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
-        }
-
-        .container {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin: 0 0 1rem 0;
-        }
-
-        p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            margin: 0 0 2.5rem 0;
-            max-width: 500px;
-        }
-
-        .toggle-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .toggle-switch {
-            width: 60px;
-            height: 30px;
-            background: var(--dark-bg);
-            border-radius: 15px;
+        .image-container {
+            width: 100%;
+            height: 100%;
             position: relative;
-            transition: background-color 0.5s ease;
-        }
-
-        body.dark-mode .toggle-switch {
-            background: var(--light-bg);
-        }
-
-        .toggle-slider {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 20px;
-            height: 20px;
-            background: var(--light-bg);
-            border-radius: 50%;
-            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        }
-
-        body.dark-mode .toggle-slider {
-            background: var(--dark-bg);
-            transform: translateX(30px);
+            overflow: hidden;
         }
         
-        .toggle-icon {
-            font-size: 1.5rem;
-            margin: 0 1rem;
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-out;
         }
 
-        footer {
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .overlay {
             position: absolute;
-            bottom: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 8vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+            mix-blend-mode: overlay; /* Creates a cool text effect */
         }
         
-        footer a {
-           color: var(--accent-color);
-           text-decoration: none;
+        .nav {
+           position: fixed;
+           top: 2rem;
+           left: 2rem;
+           z-index: 10;
+        }
+
+        .nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-right: 2rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-text);
+            transition: width 0.3s ease;
+        }
+        
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        @keyframes slide {
+            0%, 20% { transform: translateX(0%); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 100% { transform: translateX(-75%); }
         }
 
     </style>
 	</head>
-	<body class="dark-mode">
-    <div class="container">
-        <h1>John Ogletree</h1>
-        <p>A digital craftsman, shaping ideas into immersive online experiences. Let's illuminate your next project.</p>
-        <div class="toggle-container" id="theme-toggle">
-            <span class="toggle-icon">☀️</span>
-            <div class="toggle-switch">
-                <div class="toggle-slider"></div>
+	<body>
+    <nav class="nav">
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div id="gallery">
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1945&q=80" alt="Abstract Art 1">
+            <div class="overlay">
+                <h1 class="title">Vibrant</h1>
             </div>
-            <span class="toggle-icon">🌙</span>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1549492423-40021226e3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80" alt="Abstract Art 2">
+            <div class="overlay">
+                <h1 class="title">Bold</h1>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1502472584811-04a43588544a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1953&q=80" alt="Abstract Art 3">
+            <div class="overlay">
+                <h1 class="title">Creative</h1>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="Abstract Art 4">
+            <div class="overlay">
+                <h1 class="title">Modern</h1>
+            </div>
         </div>
     </div>
-    <footer>
-        <p>Built by <a href="#">John Ogletree</a></p>
-    </footer>
-
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            body.classList.toggle('dark-mode');
-        });
-    </script>
 	</body>
 </html>
-```
