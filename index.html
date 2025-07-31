@@ -82,18 +82,13 @@
   .repo-title { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); color: var(--color-heading); font-size: 0.8rem; text-decoration: none; font-weight: 400; }
   .icon-repo { fill: var(--color-text); }
   
-  .menu-toggle, .close-menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--color-accent); padding: 0.5rem; }
-  .main-nav { position: static; background-color: transparent; height: auto; width: auto; opacity: 1; pointer-events: auto; flex-direction: row; }
+  .menu-toggle { display: none; } /* Hide by default */
+  .main-nav { position: static; background-color: transparent; height: auto; width: auto; }
   .nav-links { display: flex; flex-direction: row; align-items: center; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
   .nav-links li { margin: 0; }
   .nav-links a { font-family: var(--font-body); font-size: 20px; font-weight: 400; color: var(--color-text); text-decoration: none; padding: 0.5rem 1rem; transition: all 0.2s ease; }
   .nav-links a:hover { color: var(--color-accent); background-color: var(--color-accent-transparent); }
   
-  .sitemap-icon-link { display: flex; align-items: center; }
-  .sitemap-icon-link a { display: inline-block; line-height: 0; }
-  .sitemap-icon-link svg { width: 1.5rem; height: 1.5rem; color: var(--color-text); transition: color 0.2s ease; }
-  .sitemap-icon-link a:hover svg { color: var(--color-accent); }
-
   .availability-banner { display: flex; align-items: center; justify-content: center; position: relative; background-color: var(--color-accent); color: var(--color-bg); padding: 0.75rem 3rem; text-shadow: none; }
   .availability-banner.is-hidden { display: none; }
   .banner-content { display: flex; flex-direction: row; align-items: center; justify-content: center; text-align: center; gap: 1rem; }
@@ -309,17 +304,48 @@
     .nav-container {
         padding: 0 1.5rem;
     }
+    
+    /* Animated Hamburger/X Button */
     .menu-toggle {
         display: block;
         z-index: 1001;
+        width: 32px;
+        height: 32px;
+        position: relative;
+        cursor: pointer;
+        background: none;
+        border: none;
     }
-    /* Hides the default desktop nav links */
-    .nav-container .main-nav {
-      display: none;
+    .menu-toggle span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: var(--color-accent);
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
     }
+    .menu-toggle span:nth-child(1) { top: 6px; }
+    .menu-toggle span:nth-child(2) { top: 14px; }
+    .menu-toggle span:nth-child(3) { top: 22px; }
 
-    /* Styles the mobile overlay container */
-    #mobile-nav-overlay {
+    .menu-toggle.is-active span:nth-child(1) {
+        top: 14px;
+        transform: rotate(135deg);
+    }
+    .menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+    .menu-toggle.is-active span:nth-child(3) {
+        top: 14px;
+        transform: rotate(-135deg);
+    }
+    
+    /* Mobile Nav Overlay */
+    .main-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -337,56 +363,53 @@
         padding: 2rem;
         box-sizing: border-box;
     }
-    #mobile-nav-overlay.is-open {
+    body.mobile-nav-open .main-nav {
         transform: translateY(0);
     }
-    #mobile-nav-overlay .nav-links {
+    /* Hide the desktop nav links list when not in mobile view */
+    .nav-container > .main-nav > .nav-links {
+      display: none;
+    }
+    /* Style links inside the mobile overlay */
+    .main-nav .nav-links {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
-        list-style: none;
-        padding: 0;
-        margin: 0;
     }
-    #mobile-nav-overlay .nav-links li {
-        opacity: 0; /* Hidden for animation */
+    .main-nav .nav-links li {
+        opacity: 0;
+        transform: translateY(-10px);
     }
-    #mobile-nav-overlay.is-open .nav-links li {
+    body.mobile-nav-open .main-nav .nav-links li {
         animation: fadeIn 0.5s ease-out forwards;
     }
     /* Staggered animation delay */
-    #mobile-nav-overlay.is-open .nav-links li:nth-child(1) { animation-delay: 0.2s; }
-    #mobile-nav-overlay.is-open .nav-links li:nth-child(2) { animation-delay: 0.3s; }
-    #mobile-nav-overlay.is-open .nav-links li:nth-child(3) { animation-delay: 0.4s; }
-    #mobile-nav-overlay.is-open .nav-links li:nth-child(4) { animation-delay: 0.5s; }
-    #mobile-nav-overlay.is-open .nav-links li:nth-child(5) { animation-delay: 0.6s; }
-    #mobile-nav-overlay.is-open .nav-links li:nth-child(6) { animation-delay: 0.7s; }
-    #mobile-nav-overlay.is-open .nav-links li:nth-child(7) { animation-delay: 0.8s; }
-    #mobile-nav-overlay.is-open .nav-links li:nth-child(8) { animation-delay: 0.9s; }
-
+    body.mobile-nav-open .main-nav .nav-links li:nth-child(1) { animation-delay: 0.2s; }
+    body.mobile-nav-open .main-nav .nav-links li:nth-child(2) { animation-delay: 0.3s; }
+    body.mobile-nav-open .main-nav .nav-links li:nth-child(3) { animation-delay: 0.4s; }
+    body.mobile-nav-open .main-nav .nav-links li:nth-child(4) { animation-delay: 0.5s; }
+    body.mobile-nav-open .main-nav .nav-links li:nth-child(5) { animation-delay: 0.6s; }
+    body.mobile-nav-open .main-nav .nav-links li:nth-child(6) { animation-delay: 0.7s; }
+    body.mobile-nav-open .main-nav .nav-links li:nth-child(7) { animation-delay: 0.8s; }
+    body.mobile-nav-open .main-nav .nav-links li:nth-child(8) { animation-delay: 0.9s; }
+    
     /* Blinking Cursor */
-    #mobile-nav-overlay.is-open .nav-links li:last-child::after {
+    body.mobile-nav-open .main-nav .nav-links li:last-child::after {
         content: '_';
         display: inline-block;
         margin-left: 8px;
         animation: blink 1s infinite;
+        animation-delay: 1s; /* Start blinking after the last item fades in */
     }
-    
-    #mobile-nav-overlay .nav-links a {
+    .main-nav .nav-links a {
         font-size: 1.5rem;
         font-family: var(--font-heading);
         padding: 0.5rem;
     }
-    #mobile-nav-overlay .nav-links a::before {
+    .main-nav .nav-links a::before {
         content: '> ';
         color: var(--color-accent);
-    }
-    #mobile-nav-overlay .close-menu-toggle {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1.5rem;
     }
     
     section {
@@ -448,13 +471,6 @@
                 <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path><path d="m11.25 16 .75-.75L8.75 12l3.25-3.25-.75-.75-3.25 3.25-3.25-3.25-.75.75L7.25 12l-3.25 3.25.75.75L8 12.75Z"></path></svg>
                 <span>John Ogletree</span>
             </a>
-            <button class="menu-toggle" aria-label="Open menu">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="3" y1="12" x2="21" y2="12"></line>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            </button>
             <nav class="main-nav" id="main-nav">
                <ul class="nav-links">
                   <li><a href="index.html">Home</a></li>
@@ -467,28 +483,13 @@
                   <li><a href="faq.html">FAQ</a></li>
                </ul>
             </nav>
+            <button class="menu-toggle" aria-label="Open menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
         </div>
     </header>
-
-    <nav id="mobile-nav-overlay">
-        <button class="close-menu-toggle" aria-label="Close menu">
-           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-               <line x1="18" y1="6" x2="6" y2="18"></line>
-               <line x1="6" y1="6" x2="18" y2="18"></line>
-           </svg>
-        </button>
-        <ul class="nav-links">
-           <li><a href="index.html">Home</a></li>
-           <li><a href="about.html">About</a></li>
-           <li><a href="services.html">Services</a></li>
-           <li><a href="projects.html">Projects</a></li>
-           <li><a href="articles.html">Articles</a></li>
-           <li><a href="contact.html">Contact</a></li>
-           <li><a href="resume.html">Resume</a></li>
-           <li><a href="faq.html">FAQ</a></li>
-        </ul>
-    </nav>
-
 
     <div class="availability-banner" id="availability-banner">
         <div class="banner-content">
@@ -702,7 +703,7 @@
               <article class="blog-card">
                   <div class="blog-meta">
                       <span class="blog-category">Design Process</span>
-                      <time datetime="2025-07-30">July 30, 2025</time>
+                      <time datetime="2025-07-31">July 31, 2025</time>
                   </div>
                   <h3 class="blog-title">Reducing Cognitive Load</h3>
                   <p class="blog-excerpt">How we simplified complex workflows for Andromeda CRM by focusing on progressive disclosure...</p>
@@ -790,23 +791,23 @@
 
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
-    const mobileNav = document.querySelector('#mobile-nav-overlay');
+    const mainNav = document.querySelector('#main-nav');
     
-    if (menuToggle && mobileNav) {
-        const closeMenuToggle = mobileNav.querySelector('.close-menu-toggle');
-        const navLinks = mobileNav.querySelectorAll('a');
+    if (menuToggle && mainNav) {
+        const navLinks = mainNav.querySelectorAll('a');
 
-        menuToggle.addEventListener('click', () => {
-            mobileNav.classList.add('is-open');
-        });
+        const toggleMenu = () => {
+            document.body.classList.toggle('mobile-nav-open');
+            menuToggle.classList.toggle('is-active');
+        };
 
-        closeMenuToggle.addEventListener('click', () => {
-            mobileNav.classList.remove('is-open');
-        });
+        menuToggle.addEventListener('click', toggleMenu);
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileNav.classList.remove('is-open');
+                if (document.body.classList.contains('mobile-nav-open')) {
+                    toggleMenu();
+                }
             });
         });
     }
